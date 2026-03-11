@@ -65,7 +65,9 @@
         </tr>
     </table>
 <p>x<sup>2</sup> + 3X<sup>3</sup> + 4y<sub>z</sub> = 3<sub>i</sub> + 4<sub>j</sub></p>
-        <style>
+
+        
+<style>
   
   .univ-list,
   .univ-list ul,
@@ -75,81 +77,53 @@
     list-style: none;
   }
 
-  .univ-list {
-    font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
-    max-width: 600px;
-  }
-
   
-  .univ-list > li {
-    position: relative;
-    padding-left: 1.5rem;
+  ul.univ-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;   
+  }
+  ul.univ-list > li {
     margin-bottom: 0.75rem;
     font-weight: 500;
     font-size: 1.2rem;
   }
-  .univ-list > li::before {
-    content: "-";
-    position: absolute;
-    left: 0.2rem;
-    font-weight: 600;
-  }
 
   
-  .univ-list li ul,
-  .univ-list li ol {
+  .roman-list {
+    list-style-type: upper-roman;
     padding-left: 2rem;
-    margin-top: 0.25rem;
   }
-
-  
-  .paren-list {
-    counter-reset: paren-counter;
-  }
-  .paren-list > li {
-    counter-increment: paren-counter;
-    position: relative;
-    padding-left: 2rem;
-    margin-bottom: 0.2rem;
+  .roman-list > li {
     font-weight: 400;
     font-size: 1rem;
-  }
-  .paren-list > li::before {
-    content: counter(paren-counter) ")";
-    position: absolute;
-    left: 0;
+    margin-bottom: 0.2rem;
   }
 
   
   .default-ol {
     list-style-type: decimal;
-    padding-left: 2.5rem; 
+    padding-left: 2.5rem;
   }
   .default-ol > li {
-    padding-left: 0.2rem;
     margin-bottom: 0.2rem;
   }
 
   
-  .dash-list {
-    list-style: none;
+  .square-list {
+    list-style-type: square;
     padding-left: 2rem;
   }
-  .dash-list > li {
-    position: relative;
-    padding-left: 1.5rem;
+  .square-list > li {
     margin-bottom: 0.15rem;
-  }
-  .dash-list > li::before {
-    content: "-";
-    position: absolute;
-    left: 0.1rem;
   }
 
   
-  .default-ol > li > ul {
-    margin-top: 0.2rem;
-    padding-left: 1.5rem;
+  .circle-list {
+    list-style-type: circle;
+    padding-left: 2rem;
+  }
+  .circle-list > li {
+    margin-bottom: 0.15rem;
   }
 
   
@@ -165,19 +139,19 @@
 <div class="univ-list">
   <div class="univ-heading"><u>Universities in Uganda.</u></div>
 
-  <ul class="univ-list"> 
+  <ul class="univ-list">
     <li><u>Kyambogo</u>
-      <ol class="paren-list">
-        <li>mechanics</li>
+      <ol class="roman-list">
+        <li>Mechanics</li>
         <li>Computing</li>
         <li>Social Works</li>
       </ol>
     </li>
-    <li><u>Makerere</u>
+    <li>Makerere
       <ol class="default-ol">
         <li>Computing</li>
         <li>Medicine
-          <ul class="dash-list">
+          <ul class="square-list">
             <li>Nursing</li>
             <li>Surgery</li>
           </ul>
@@ -185,7 +159,7 @@
       </ol>
     </li>
     <li><u>Mbarara</u>
-      <ul class="dash-list">
+      <ul class="circle-list">
         <li>Engineering</li>
         <li>Science</li>
         <li>Technology</li>
@@ -193,10 +167,10 @@
     </li>
   </ul>
 </div>
-
 </body>
     
 </html>
+
 
 
 
