@@ -66,110 +66,123 @@
     </table>
 <p>x<sup>2</sup> + 3X<sup>3</sup> + 4y<sub>z</sub> = 3<sub>i</sub> + 4<sub>j</sub></p>
 
-        
+
 <style>
-  
-  .univ-list,
-  .univ-list ul,
-  .univ-list ol {
+  .univ-list, .univ-list ul, .univ-list ol {
     margin: 0;
     padding-left: 0;
-    list-style: none;
+    list-style-position: outside;
   }
 
-  
-  ul.univ-list {
-    list-style-type: disc;
-    padding-left: 1.5rem;   
+  .univ-list {
+    font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+    max-width: 600px;
   }
-  ul.univ-list > li {
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+  }
+
+  .univ-list {
+    list-style-type: disc;
+    padding-left: 1.8rem;        
+  }
+  .univ-list > li {
     margin-bottom: 0.75rem;
+  }
+
+  .univ-name {
+    text-decoration: underline;
     font-weight: 500;
     font-size: 1.2rem;
   }
 
-  
   .roman-list {
-    list-style-type: upper-roman;
+    list-style-type: lower-roman;
     padding-left: 2rem;
+    margin-top: 0.2rem;
   }
   .roman-list > li {
-    font-weight: 400;
-    font-size: 1rem;
     margin-bottom: 0.2rem;
+    font-weight: 400;
   }
 
-  
   .default-ol {
     list-style-type: decimal;
     padding-left: 2.5rem;
+    margin-top: 0.2rem;
   }
   .default-ol > li {
     margin-bottom: 0.2rem;
   }
 
-  
   .square-list {
     list-style-type: square;
     padding-left: 2rem;
+    margin-top: 0.2rem;
   }
   .square-list > li {
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.1rem;
   }
 
-  
+  /* ----- Mbarara subjects: unshaded circles ----- */
   .circle-list {
     list-style-type: circle;
     padding-left: 2rem;
+    margin-top: 0.2rem;
   }
   .circle-list > li {
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.1rem;
   }
 
-  
-  .univ-heading {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin: 0 0 1rem 0;
-    border-bottom: 2px solid #e6edf4;
-    padding-bottom: 0.4rem;
+  /* fine‑tune nested indentation */
+  .default-ol > li > ul {
+    margin-top: 0.2rem;
+    padding-left: 1.5rem;
   }
 </style>
 
-<div class="univ-list">
-  <div class="univ-heading"><u>Universities in Uganda.</u></div>
+<h1>Universities in Uganda.</h1>
 
-  <ul class="univ-list">
-    <li><u>Kyambogo</u>
-      <ol class="roman-list">
-        <li>Mechanics</li>
-        <li>Computing</li>
-        <li>Social Works</li>
-      </ol>
-    </li>
-    <li>Makerere
-      <ol class="default-ol">
-        <li>Computing</li>
-        <li>Medicine
-          <ul class="square-list">
-            <li>Nursing</li>
-            <li>Surgery</li>
-          </ul>
-        </li>
-      </ol>
-    </li>
-    <li><u>Mbarara</u>
-      <ul class="circle-list">
-        <li>Engineering</li>
-        <li>Science</li>
-        <li>Technology</li>
-      </ul>
-    </li>
-  </ul>
-</div>
+<ul class="univ-list">
+  <li>
+    <span class="univ-name">Kyambogo</span>
+    <ol class="roman-list">
+      <li>mechanics</li>
+      <li>Computing</li>
+      <li>Social Works</li>
+    </ol>
+  </li>
+  <li>
+    <span class="univ-name">Makerere</span>
+    <ol class="default-ol">
+      <li>Computing</li>
+      <li>
+        Medicine
+        <ul class="square-list">
+          <li>Nursing</li>
+          <li>Surgery</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <span class="univ-name">Mbarara</span>
+    <ul class="circle-list">
+      <li>Engineering</li>
+      <li>Science</li>
+      <li>Technology</li>
+    </ul>
+  </li>
+</ul>
 </body>
     
 </html>
+
 
 
 
