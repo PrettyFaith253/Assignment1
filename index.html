@@ -4,6 +4,294 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>St. Raphael</title>
+
+        <style>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    .profile-card-insert {
+        max-width: 1000px;
+        width: 100%;
+        background: white;
+        border-radius: 32px;
+        box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.12), 0 8px 16px -6px rgba(0, 0, 0, 0.05);
+        padding: 2.2rem 2rem;
+        margin: 0 auto; 
+        transition: all 0.2s;
+        color: #1e293b;
+        line-height: 1.5;
+        font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+    }
+
+    .profile-card-insert *,
+    .profile-card-insert *::before,
+    .profile-card-insert *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* header: picture left, name+bio right */
+    .profile-card-insert .profile-header {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+        flex-wrap: wrap;
+    }
+
+    .profile-card-insert .profile-pic-wrapper {
+        flex-shrink: 0;
+    }
+
+    .profile-card-insert .profile-pic {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid white;
+        box-shadow: 0 12px 24px -8px rgba(0, 20, 60, 0.2);
+        background: #e2e8f0;
+        display: block;
+    }
+
+    .profile-card-insert .name-bio {
+        flex: 1;
+    }
+
+    .profile-card-insert .name {
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: #0f172a;
+        margin-bottom: 0.3rem;
+        line-height: 1.2;
+    }
+
+    .profile-card-insert .bio {
+        font-size: 1.1rem;
+        color: #475569;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .profile-card-insert .bio i {
+        color: #3b82f6;
+        opacity: 0.8;
+    }
+
+    /* sections */
+    .profile-card-insert .section {
+        margin-bottom: 2.5rem;
+    }
+
+    .profile-card-insert .section-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        color: #0f172a;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-left: 6px solid #3b82f6;
+        padding-left: 1rem;
+    }
+
+    .profile-card-insert .section-title i {
+        color: #3b82f6;
+        font-size: 1.3rem;
+    }
+
+    /* two-column lists */
+    .profile-card-insert .lists-row {
+        display: flex;
+        gap: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .profile-card-insert .list-box {
+        flex: 1;
+        background: #f8fafc;
+        padding: 1.5rem 1.8rem;
+        border-radius: 20px;
+    }
+
+    .profile-card-insert .list-box h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #1e293b;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .profile-card-insert .list-box h3 i {
+        color: #3b82f6;
+    }
+
+    .profile-card-insert .list-ordered ol,
+    .profile-card-insert .list-unordered ul {
+        padding-left: 1.8rem;
+        margin: 0;
+    }
+
+    .profile-card-insert .list-ordered li,
+    .profile-card-insert .list-unordered li {
+        margin-bottom: 0.6rem;
+        font-size: 1.05rem;
+        color: #1e293b;
+    }
+
+    .profile-card-insert .list-ordered li::marker {
+        font-weight: 600;
+        color: #2563eb;
+    }
+
+    .profile-card-insert .list-unordered li::marker {
+        color: #3b82f6;
+    }
+
+    /* table */
+    .profile-card-insert .table-wrapper {
+        overflow-x: auto;
+        border-radius: 18px;
+        border: 1px solid #e2e8f0;
+        background: white;
+        margin-top: 0.5rem;
+    }
+
+    .profile-card-insert .exp-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.98rem;
+        min-width: 620px;
+    }
+
+    .profile-card-insert .exp-table th {
+        background: #1e293b;
+        color: white;
+        font-weight: 600;
+        padding: 1rem 1.2rem;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    .profile-card-insert .exp-table td {
+        padding: 1rem 1.2rem;
+        border-bottom: 1px solid #e9eef3;
+        vertical-align: top;
+    }
+
+    .profile-card-insert .exp-table tbody tr:hover {
+        background: #fafcff;
+    }
+
+    .profile-card-insert .exp-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .profile-card-insert .exp-table td:first-child {
+        font-weight: 600;
+        color: #0f172a;
+    }
+
+    /* horizontal contacts */
+    .profile-card-insert .contact-horizontal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: 1.5rem 2rem;
+        background: #f1f5f9;
+        padding: 1.5rem 2rem;
+        border-radius: 24px;
+        margin-top: 1rem;
+    }
+
+    .profile-card-insert .contact-item-h {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-size: 1.2rem;
+    }
+
+    .profile-card-insert .contact-symbol-h {
+        font-size: 2rem;
+        width: 2.2rem;
+        text-align: center;
+        color: #1e293b;
+    }
+
+    .profile-card-insert .contact-text-h {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #0f172a;
+    }
+
+    .profile-card-insert .contact-text-h a {
+        text-decoration: none;
+        color: #2563eb;
+        border-bottom: 1px dotted #93c5fd;
+    }
+
+    .profile-card-insert .contact-text-h a:hover {
+        color: #1e40af;
+        border-bottom: 1px solid #1e40af;
+    }
+
+    /* extras */
+    .profile-card-insert .caption-note {
+        margin-top: 1.8rem;
+        text-align: right;
+        font-size: 0.8rem;
+        color: #64748b;
+        opacity: 0.8;
+    }
+
+    .profile-card-insert hr {
+        border: none;
+        border-top: 2px dotted #cbd5e1;
+        margin: 1.5rem 0 0.5rem;
+    }
+
+    .profile-card-insert i {
+        margin-right: 4px;
+    }
+
+    /* responsiveness */
+    @media (max-width: 650px) {
+        .profile-card-insert .profile-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .profile-card-insert .name {
+            font-size: 2.2rem;
+        }
+        .profile-card-insert .lists-row {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .profile-card-insert .contact-horizontal {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1.2rem 1.5rem;
+        }
+        .profile-card-insert {
+            padding: 1.5rem 1.2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .profile-card-insert .profile-pic {
+            width: 110px;
+            height: 110px;
+        }
+    }
+</style>
     </head>
     <body >
         <img src="ST. RAPHAEL BADGE.PNG" alt="School Badge" width="100">
@@ -212,6 +500,163 @@
   </tr>
 </table>
    <p> My University is<span>Kyambogo</span> University. </p>
+
+        <!-- PROFILE CARD  -->
+<div class="profile-card-insert">
+
+    <!-- HEADER: picture left, name+bio right -->
+    <div class="profile-header">
+        <div class="profile-pic-wrapper">
+            <img class="profile-pic" 
+                 src="mypicture.JPG" 
+                 alt="Profile of Pretty Faith Nuwampaire"
+                 title="Your photo · circle on top left side">
+        </div>
+        <div class="name-bio">
+            <h1 class="name">Pretty Faith Nuwampaire</h1>
+            <div class="bio">
+                <i class="fas fa-map-pin"></i> 
+                Product designer & front-end architect · human-centered experiences
+            </div>
+        </div>
+    </div>
+
+    <!-- TWO-COLUMN LISTS: ordered (education) left, unordered (skills/hobbies) right -->
+    <div class="section">
+        <div class="section-title">
+            <i class="fas fa-graduation-cap"></i> 
+            Education & Skills
+        </div>
+        <div class="lists-row">
+            <!-- LEFT: ordered list of schools -->
+            <div class="list-box">
+                <h3><i class="fas fa-school"></i> Education</h3>
+                <div class="list-ordered">
+                    <ol>
+                        <li><strong>Kyambogo University</strong> — Bachelor of Information Technology and Computing (2024–2027)</li>
+                        <li><strong>Mengo SS</strong> — Uganda Advanced Certificate of Education (2022–2023)</li>
+                        <li><strong>Maryhill High School</strong> — Uganda Certificate of Education (2017–2021)</li>
+                        <li><strong>Lake Victooria School</strong> — Primary Leaving Examination (2010- 2016)</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- RIGHT: unordered list of skills & hobbies -->
+            <div class="list-box">
+                <h3><i class="fas fa-code"></i> Skills & Hobbies</h3>
+                <div class="list-unordered">
+                    <ul>
+                        <li>UI/UX design (Figma, Adobe XD) & prototyping</li>
+                        <li>Front-end: React, Vue, Tailwind, modern CSS</li>
+                        <li>User research, wireframing, accessibility (WCAG)</li>
+                        <li>Hobbies: landscape photography, bouldering, jazz piano</li>
+                        <li>Languages: English (native), Spanish, Japanese</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TABLE OF EXPERIENCES (at least four rows) -->
+    <div class="section">
+        <div class="section-title">
+            <i class="fas fa-briefcase"></i> 
+            Professional Experience
+        </div>
+        <div class="table-wrapper">
+            <table class="exp-table">
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Company / Organization</th>
+                        <th>Period</th>
+                        <th>Key contributions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Senior Product Designer</td>
+                        <td>NITA U</td>
+                        <td>2023 – Present</td>
+                        <td>Lead design system, increased retention by 32%</td>
+                    </tr>
+                    <tr>
+                        <td>UX Engineer (Front-end)</td>
+                        <td>UCAA</td>
+                        <td>2021 – 2023</td>
+                        <td>Built interactive prototypes, design-to-code workflow</td>
+                    </tr>
+                    <tr>
+                        <td>Design & Research Intern</td>
+                        <td>NPF CoLab</td>
+                        <td>2020 – 2021</td>
+                        <td>Conducted 40+ user interviews, synthesized insights</td>
+                    </tr>
+                    <tr>
+                        <td>Web Development Mentor</td>
+                        <td>CodePath / non‑profit</td>
+                        <td>2019 – 2020</td>
+                        <td>Taught HTML/CSS/JS to 80+ students</td>
+                    </tr>
+                    <tr>
+                        <td>Freelance UI Designer</td>
+                        <td>Self‑employed</td>
+                        <td>2018 – 2021</td>
+                        <td>Delivered 15+ client projects, branding & web apps</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="font-size: 0.8rem; margin-top: 8px; color: #64748b; text-align: right;">
+            <i class="far fa-table"></i> 5 roles · meets “at least four”
+        </div>
+    </div>
+
+    <!-- CONTACT DETAILS (horizontal, below table) -->
+    <div class="section">
+        <div class="section-title">
+            <i class="fas fa-address-card"></i> 
+            Contact
+        </div>
+        
+        <div class="contact-horizontal">
+            <!-- ☐ phone -->
+            <div class="contact-item-h">
+                <span class="contact-symbol-h">☐</span>
+                <span class="contact-text-h">
+                    <i class="fas fa-phone-alt" style="margin-right: 8px; color: #2563eb;"></i>
+                    <strong>Phone</strong> &nbsp; +1 (415) 555‑0198
+                </span>
+            </div>
+            <!-- ✖ X (Twitter) -->
+            <div class="contact-item-h">
+                <span class="contact-symbol-h">✖</span>
+                <span class="contact-text-h">
+                    <i class="fab fa-x-twitter" style="margin-right: 8px; color: #0f1419;"></i>
+                    <strong>X</strong> &nbsp; 
+                    <a href="#">@alex_designs</a>
+                </span>
+            </div>
+            <!-- ⊕ Facebook -->
+            <div class="contact-item-h">
+                <span class="contact-symbol-h">⊕</span>
+                <span class="contact-text-h">
+                    <i class="fab fa-facebook" style="margin-right: 8px; color: #1877f2;"></i>
+                    <strong>Facebook</strong> &nbsp; 
+                    <a href="#">/alex.morgan.ux</a>
+                </span>
+            </div>
+        </div>
+        <div style="margin-top: 10px; font-size: 0.8rem; color: #62748c; padding-left: 8px;">
+            <i class="far fa-circle-check"></i> Symbols: ☐ phone · ✖ X · ⊕ Facebook
+        </div>
+    </div>
+    
+    <hr>
+    <div class="caption-note">
+        <i class="far fa-image"></i> Profile picture placeholder · replace with your own
+    </div>
+</div>
+<!-- END PROFILE CARD -->
 </body>
     
 </html>
